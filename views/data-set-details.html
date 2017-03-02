@@ -1,0 +1,82 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <h1> {{idResult.name}} </h1>
+      <hr>
+      <h2><small>Category Combination</small></h2>
+      <h2> {{idResult.categoryCombo.name}} </h2>
+    </div>
+
+    <div class="col-md-6">
+      <h2 class="sub-header">Data Elements</h2>
+      <!-- <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th class="col-md-1">#</th>
+              <th class="col-md-2">Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="util in idResult.dataElements">
+              <td class="col-md-1">{{$index + 1}} </td>
+              <td class="col-md-2"> {{util.name}} </td>
+            </tr>
+        </tbody>
+        </table> -->
+        <a ng-if="apiname == 'dataSets'" dir-paginate="iterm in idResult.dataElements | filter:search |itemsPerPage :15" " class="list-group-item">{{iterm.name}}</a>
+        <div class="text-center">
+            <dir-pagination-controls></dir-pagination-controls>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h2 class="sub-header">Organisation Units</h2>
+      <div class="table-responsive">
+        <!-- <table class="table table-striped">
+          <thead>
+            <tr>
+              <th class="col-md-1">#</th>
+              <th class="col-md-2">Name</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="util in idResult.organisationUnits">
+              <td class="col-md-1">{{$index + 1}} </td>
+              <td class="col-md-2"> {{util.name}} </td>
+            </tr>
+        </tbody>
+        </table> -->
+        <a ng-if="apiname == 'dataSets'" dir-paginate="iterm in idResult.organisationUnits | filter:search |itemsPerPage :15" " class="list-group-item">{{iterm.name}}</a>
+        <div class="text-center">
+            <dir-pagination-controls></dir-pagination-controls>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-6" ng-show="idResult.indicators.length > 0">
+      <h2 class="sub-header">Indicators</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th class="col-md-1">#</th>
+              <th class="col-md-2">Name</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="util in idResult.indicators">
+              <td class="col-md-1">{{$index + 1}} </td>
+              <td class="col-md-2"> {{util.name}} </td>
+            </tr>
+        </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>

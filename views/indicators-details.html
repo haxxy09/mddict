@@ -1,0 +1,43 @@
+<div>
+
+  <h1>{{idResult.name}}</h1>
+  <hr/>
+
+  <h2><small>Description: </small></h2>
+  <p>
+    {{idResult.description}}
+  </p>
+  <hr/>
+
+  <h2><small>Denominator Description</small></h2>
+  <p>
+    {{idResult.denominatorDescription}}
+  </p>
+  <hr>
+
+  <h2><small>Numerator Description</small></h2>
+  <p>
+    {{idResult.numeratorDescription}}
+  </p>
+
+  <div class="col-md-6">
+    <h2 class="sub-header">Indicator Groups</h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="col-md-1">#</th>
+            <th class="col-md-2">Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="util in idResult.indicatorGroups">
+            <td class="col-md-1">{{$index + 1}} </td>
+            <td class="col-md-2"> {{util.name}} </td>
+          </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

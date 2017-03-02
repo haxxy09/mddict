@@ -1,0 +1,10 @@
+<a href="#" class="list-group-item active">
+    {{groupTitle}}
+</a>
+
+<a ng-if="apiname == 'dataSets'" ng-repeat="iterm in Groupresult.dataSetGroups "   href="#/dataSets/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+<a ng-if="apiname == 'indicators'" ng-repeat="iterm in Groupresult.indicatorGroups " href="#/indicators/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+<a ng-if="apiname == 'dataElements'" ng-repeat="iterm in Groupresult.dataElementGroups" href="#/dataElements/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+<a ng-if="apiname == 'organisationUnits'" ng-repeat="iterm in Groupresult.organisationUnitGroups"  href="#/organisationUnits/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+
+

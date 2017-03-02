@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+
+            <div ng-if="grouped" class="list-group">
+
+                <a href="#" class="list-group-item active">
+                    {{groupTitle}}
+                </a>
+
+                <a ng-if="apiname == 'dataSets'" dir-paginate="iterm in Groupresult.dataSetGroups | filter:search |itemsPerPage :15"  href="#/dataSets/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+                <a ng-if="apiname == 'indicators'" dir-paginate="iterm in Groupresult.indicatorGroups  | filter:search |itemsPerPage :15" href="#/indicatorGroups/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+                <a ng-if="apiname == 'dataElements'" dir-paginate="iterm in Groupresult.dataElementGroups  | filter:search |itemsPerPage :15" href="#/dataElementGroups/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+                <a ng-if="apiname == 'programs'" dir-paginate="iterm in Groupresult.programGroup | filter:search |itemsPerPage :15"  href="#/programs/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+                <a ng-if="apiname == 'organisationUnits'" dir-paginate="iterm in Groupresult.organisationUnitGroups | filter:search |itemsPerPage :15"  href="#/organisationUnitGroups/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+                <a ng-if="apiname == 'users'" dir-paginate="iterm in Groupresult.userGroups | filter:search |itemsPerPage :15"  href="#/users/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+                <div class="text-center">
+                    <dir-pagination-controls></dir-pagination-controls>
+                </div>
+                <div ng-include = "'views/groups.html'"></div>
+
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="list-group">
+                <a href="#" class="list-group-item active">
+                    {{title}}
+                </a>
+
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <br><br>
+                        <label for="inputEmail3" class="col-sm-2 control-label">Search </label>
+                        <div class="col-sm-6">
+                            <input ng-model="search" type="text" class="form-control" id="inputEmail3" placeholder="Search">
+                        </div>
+                    </div>
+                </form>
+
+                <a ng-if="apiname == 'dataSets'" dir-paginate="iterm in result.dataSets | filter:search |itemsPerPage :15"  href="#/dataSets/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+                <a ng-if="apiname == 'indicators'" dir-paginate="iterm in result.indicators  | filter:search |itemsPerPage :15" href="#/indicators/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+                <a ng-if="apiname == 'dataElements'" dir-paginate="iterm in result.dataElements  | filter:search |itemsPerPage :15" href="#/dataElements/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+                <a ng-if="apiname == 'programs'" dir-paginate="iterm in result.programs | filter:search |itemsPerPage :15"  href="#/programs/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+                <a ng-if="apiname == 'organisationUnits'" dir-paginate="iterm in result.organisationUnits | filter:search |itemsPerPage :15"  href="#/organisationUnits/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+                <a ng-if="apiname == 'users'" dir-paginate="iterm in result.users | filter:search |itemsPerPage :15"  href="#/users/{{iterm.id}}" class="list-group-item">{{iterm.name}}</a>
+                <div class="text-center">
+                    <dir-pagination-controls></dir-pagination-controls>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+</div>

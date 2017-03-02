@@ -1,0 +1,91 @@
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-3">
+            <h2 class="sub-header">Program Tracked Entity Attributes</h2>
+              <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th class="col-md-1">#</th>
+                              <th class="col-md-2">Name</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr ng-repeat="util in idResult.programTrackedEntityAttributes">
+                              <td class="col-md-1">{{$index + 1}}</td>
+                              <td class="col-md-2">{{util.name}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+            </div>
+
+            <div class="col-md-3">
+              <h2 class="sub-header">Program Stages</h2>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th class="col-md-1">#</th>
+                      <th class="col-md-2">Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="util in idResult.programStages">
+                      <td class="col-md-1">{{$index + 1}} </td>
+                      <td class="col-md-2"> {{util.name}} </td>
+                    </tr>
+                </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <h2 class="sub-header">Organisation Units</h2>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th class="col-md-1">#</th>
+                      <th class="col-md-2">Name</th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="util in idResult.organisationUnits">
+                      <td class="col-md-1">{{$index + 1}} </td>
+                      <td class="col-md-2"> {{util.name}} </td>
+
+                    </tr>
+                </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <h2 class="sub-header">User Roles</h2>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th class="col-md-1">#</th>
+                      <th class="col-md-2">Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="util in idResult.userRoles">
+                      <td class="col-md-1">{{$index + 1}} </td>
+                      <td class="col-md-2"> {{util.name}} </td>
+                    </tr>
+                  </table>
+                </tbody>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <h2 class="sub-header">Tracked Entity</h2>
+              <h4> {{idResult.trackedEntity.name}}</h4>
+            </div>
+
+            </div>
+          </div>

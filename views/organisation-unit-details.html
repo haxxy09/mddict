@@ -1,0 +1,89 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-3">
+    <h2 class="sub-header">Ancestors</h2>
+      <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th class="col-md-1">#</th>
+                      <th class="col-md-2">Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="util in orgResults.ancestors">
+                      <td class="col-md-1">{{$index + 1}}</td>
+                      <td class="col-md-2">{{util.name}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+    </div>
+      <div class="col-md-3">
+              <h2 class="sub-header">Organisation Unit Groups</h2>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th class="col-md-1">#</th>
+                      <th class="col-md-2">Name</th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="util in orgResults.organisationUnitGroups">
+                      <td class="col-md-1">{{$index + 1}} </td>
+                      <td class="col-md-2"> {{util.name}} </td>
+
+                    </tr>
+                </tbody>
+                </table>
+              </div>
+      </div>
+
+      <div class="col-md-3" ng-show="orgResults.programs !== null">
+              <h2 class="sub-header">Programs</h2>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th class="col-md-1">#</th>
+                      <th class="col-md-2">Name</th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="util in orgResults.programs">
+                      <td class="col-md-1">{{$index + 1}} </td>
+                      <td class="col-md-2"> {{util.name}} </td>
+
+                    </tr>
+                </tbody>
+                </table>
+              </div>
+      </div>
+
+      <div class="col-md-3">
+              <h2 class="sub-header">Data Sets</h2>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th class="col-md-1">#</th>
+                      <th class="col-md-2">Name</th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="util in orgResults.dataSets">
+                      <td class="col-md-1">{{$index + 1}} </td>
+                      <td class="col-md-2"> {{util.name}} </td>
+
+                    </tr>
+                </tbody>
+                </table>
+              </div>
+      </div>
+  </div>
+</div>

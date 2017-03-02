@@ -1,0 +1,14 @@
+<!-- {{groupResult}} -->
+<h1>{{groupResult.name}}</h1>
+<hr>
+<h2><small>Indicator group set</small></h2>
+<p>
+  {{groupResult.indicatorGroupSet.name}}
+</p>
+<hr>
+
+<h2><small>Indicators</small></h2>
+<a ng-if="apiname == 'indicators'" dir-paginate="iterm in groupResult.indicators | filter:search |itemsPerPage :15" class="list-group-item">{{iterm.name}}</a>
+<div class="text-center">
+    <dir-pagination-controls></dir-pagination-controls>
+</div>
